@@ -31,15 +31,18 @@ public class CirculoFrame extends JFrame {
 		super("Circulo");
 		
 		panelControle = new JPanel(new FlowLayout());
-		panelCirculo = new CirculoPanel(0, 0, 0);
+		panelCirculo = new CirculoPanel(50, 50, 50);
 		
 		labelRaio = new JLabel("Raio: ");
 		labelEixoX = new JLabel("Eixo X: ");
 		labelEixoY = new JLabel("Eixo Y: ");
 		
 		fieldRaio = new JTextField(5);
+		fieldRaio.setText(Double.toString(panelCirculo.getCirc().getRaio()));
 		fieldEixoX =  new JTextField(5);
+		fieldEixoX.setText(Integer.toString(panelCirculo.getEixoX()));
 		fieldEixoY =  new JTextField(5);
+		fieldEixoY.setText(Integer.toString(panelCirculo.getEixoY()));
 		
 		buttonCalcular = new JButton("Calcular");
 		

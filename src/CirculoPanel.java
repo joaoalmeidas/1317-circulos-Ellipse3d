@@ -39,6 +39,11 @@ public class CirculoPanel extends JPanel{
 		setBackground(Color.WHITE);
 		
 		g2d.draw(new Ellipse2D.Double(getEixoX(), getEixoY(), circ.getDiametro(), circ.getDiametro()));
+		g.drawString(String.format("Raio: %.1f", circ.getRaio()),  getEixoX() + (int) circ.getDiametro(), getEixoY() + (int) circ.getDiametro()/2);
+		g.drawString(String.format("Diâmetro: %.1f", circ.getDiametro()),  getEixoX() + (int) circ.getDiametro(), getEixoY() + (int) circ.getDiametro()/2 + 10);
+		g.drawString(String.format("Circunferência: %.1f", circ.getCircunferencia()),  getEixoX() + (int) circ.getDiametro(), getEixoY() + (int) circ.getDiametro()/2 + 20);
+		g.drawString(String.format("Área: %.1f", circ.getArea()),  getEixoX() + (int) circ.getDiametro(), getEixoY() + (int) circ.getDiametro()/2 + 30);
+		
 		repaint();
 		
 	}
