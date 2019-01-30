@@ -38,7 +38,7 @@ public class CirculoFrame extends JFrame {
 		labelEixoY = new JLabel("Eixo Y: ");
 		
 		fieldRaio = new JTextField(5);
-		fieldRaio.setText(Double.toString(panelCirculo.getCirc().getRaio()));
+		fieldRaio.setText("50");
 		fieldEixoX =  new JTextField(5);
 		fieldEixoX.setText(Integer.toString(panelCirculo.getEixoX()));
 		fieldEixoY =  new JTextField(5);
