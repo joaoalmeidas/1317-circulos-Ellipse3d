@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.Ellipse2D;
@@ -35,7 +36,10 @@ public class CirculoPanel extends JPanel{
 		super.paintComponent(g);
 		Graphics2D g2d = (Graphics2D) g;
 		
+		setBackground(Color.WHITE);
+		
 		g2d.draw(new Ellipse2D.Double(getEixoX(), getEixoY(), circ.getDiametro(), circ.getDiametro()));
+		repaint();
 		
 	}
 	

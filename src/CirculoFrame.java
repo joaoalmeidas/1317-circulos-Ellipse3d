@@ -12,6 +12,7 @@ import javax.swing.JTextField;
 public class CirculoFrame extends JFrame {
 	
 	private final JPanel panelControle; 
+	private CirculoPanel panelCirculo;
 
 	private final JLabel labelRaio;
 	private final JLabel labelEixoX;
@@ -23,11 +24,14 @@ public class CirculoFrame extends JFrame {
 	
 	private final JButton buttonCalcular;
 	
+
+	
 	public CirculoFrame() {
 		
 		super("Circulo");
 		
 		panelControle = new JPanel(new FlowLayout());
+		panelCirculo = new CirculoPanel(0, 0, 0);
 		
 		labelRaio = new JLabel("Raio: ");
 		labelEixoX = new JLabel("Eixo X: ");
@@ -51,6 +55,7 @@ public class CirculoFrame extends JFrame {
 		panelControle.add(buttonCalcular);
 		
 		add(panelControle, BorderLayout.NORTH);
+		add(panelCirculo, BorderLayout.CENTER);
 		
 		buttonCalcular.addActionListener(
 				
@@ -58,7 +63,21 @@ public class CirculoFrame extends JFrame {
 
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
-						// TODO Auto-generated method stub
+						
+						if(fieldRaio.getText().equals("") || fieldEixoX.getText().equals("") || fieldEixoY.getText().equals("")) {
+							throw new IllegalArgumentException("campos em branco");
+						}
+						
+						if(Integer.parseInt(fieldRaio.getText()) <= 0 || Integer.parseInt(fieldEixoX.getText()) < 0 || Integer.parseInt(fieldEixoY.getText()) < 0) {
+							throw new IllegalArgumentException("argumetos inválido");
+						}
+						
+						remove(panelCirculo);
+						panelCirculo = new CirculoPanel(Double.parseDouble(fieldRaio.getText()), Integer.parseInt(fieldEixoX.getText()), Integer.parseInt(fieldEixoY.getText()));
+						add(panelCirculo);
+						
+						validate();
+						repaint();
 						
 					}
 					
